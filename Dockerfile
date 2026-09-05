@@ -2,7 +2,7 @@ FROM php:8.2-fpm
 
 WORKDIR /app
 
-# Install dependencies
+# Install dependencies and PHP extensions
 RUN apt-get update && apt-get install -y \
     curl \
     git \
@@ -10,6 +10,7 @@ RUN apt-get update && apt-get install -y \
     unzip \
     sqlite3 \
     libsqlite3-dev \
+    && docker-php-ext-install bcmath pdo pdo_sqlite \
     && rm -rf /var/lib/apt/lists/*
 
 # Install Composer
@@ -19,7 +20,7 @@ COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 COPY leboncoin /app
 
 # Install PHP dependencies
-RUN composer install --no-interaction --optimize-autoloader
+RUN COMPOSER_ALLOW_SUPERUSER=1 composer install --no-interaction --optimize-autoloader
 
 # Install Node dependencies
 RUN curl -fsSL https://deb.nodesource.com/setup_20.x | bash - && \
