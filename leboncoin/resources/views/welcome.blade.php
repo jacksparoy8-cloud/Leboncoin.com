@@ -19,7 +19,7 @@
 
     
 
-        <title>{{ config('app.name', 'Vinted') }}</title>
+        <title>{{ config('app.name', 'LEBONCOIN') }}</title>
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
