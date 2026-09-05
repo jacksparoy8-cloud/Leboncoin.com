@@ -1,7 +1,4 @@
 {
   "$schema": "https://railway.app/schema.json",
-  "root": "leboncoin",
-  "deploy": {
-    "port": 8080
-  }
+  "root": "leboncoin"
 }
