@@ -1,0 +1,6 @@
+[build]
+rootDirectory = "leboncoin"
+
+[deploy]
+restartPolicyMaxRetries = 5
+restartPolicyWindowMs = 600000
