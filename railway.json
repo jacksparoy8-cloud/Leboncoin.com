@@ -1,5 +1,3 @@
 {
-  "build": {
-    "builder": "nixpacks"
-  }
+  "root": "leboncoin"
 }
