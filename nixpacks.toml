@@ -1,0 +1,11 @@
+[providers]
+php = true
+
+[phases.setup]
+cmds = ["cd leboncoin && composer install"]
+
+[phases.build]
+cmds = ["cd leboncoin && npm install && npm run build"]
+
+[phases.start]
+cmd = "bash start.sh"
