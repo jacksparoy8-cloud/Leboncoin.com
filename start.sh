@@ -1,8 +1,6 @@
 #!/bin/bash
 set -e
 
-cd /app/leboncoin
-
 echo "=== Railway Laravel Deploy ==="
 
 # Load environment variables for production
