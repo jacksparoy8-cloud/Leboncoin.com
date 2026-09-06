@@ -3,33 +3,30 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <link rel="icon" type="image/png" href="{{ asset('images/leboncoin.png') }}">
+        <link rel="shortcut icon" type="image/png" href="{{ asset('images/leboncoin.png') }}">
 
-        <meta property="og:title" content="Vinted" />
-        <meta property="og:description" content="Connectez-vous à votre compte Vinted." />
+        <meta property="og:title" content="LEBONCOIN" />
+        <meta property="og:description" content="Connectez-vous à votre compte LEBONCOIN." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="{{ config('app.url') }}" />
-        <meta property="og:image" content="{{ asset('images/vinted.png') }}" />
-        <meta property="og:image:alt" content="Logo Vinted" />
+        <meta property="og:image" content="{{ asset('images/leboncoin.png') }}" />
+        <meta property="og:image:alt" content="Logo LEBONCOIN" />
 
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Vinted" />
-        <meta name="twitter:description" content="Connectez-vous à votre compte Vinted." />
+        <meta name="twitter:title" content="LEBONCOIN" />
+        <meta name="twitter:description" content="Connectez-vous à votre compte LEBONCOIN." />
         <meta name="twitter:image" content="{{ asset('images/leboncoin.png') }}" />
-
-
-    
 
         <title>{{ config('app.name', 'LEBONCOIN') }}</title>
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=instrument-sans:400,500,600" rel="stylesheet" />
-        <!--link rel="stylesheet" href="{{ asset('css/app.css') }}"-->
 
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
    <body class="bg-gray-50 min-h-screen flex items-center justify-center">
-
 
     <div id="global-loader" style="position: fixed; top:0;left:0;width:100%;height:100dvh; z-index: 9999; background: white; display: flex; flex-direction: column; align-items: center; justify-content: center; transition: opacity 0.5s ease;">
         <div class="loader-content" style="text-align: center; margin-top: 0;">
@@ -47,12 +44,8 @@
 </style>
 
 <script>
-
-        // B. On attend le chargement complet pour cacher le loader
         window.addEventListener('load', function() {
             const loader = document.getElementById('global-loader');
-            
-            // Sécurité : on vérifie que l'élément existe bien avant d'agir
             if (loader) {
                 setTimeout(() => {
                     loader.style.opacity = '0';
@@ -63,17 +56,10 @@
             }
         });
     </script>
-    
-
 
     <main class="w-full max-w-md px-4 py-8">
-
-
-
     
-        
-    <div class="bg-white p-4 sm:p-6 lg:p-8 shadow-lg rounded-2xl border border-gray-100">
-
+        <div class="bg-white p-4 sm:p-6 lg:p-8 shadow-lg rounded-2xl border border-gray-100">
 
         <header class="w-full max-w-md mx-auto text-sm mb-6">
         
@@ -82,7 +68,6 @@
             src="{{ asset('images/leboncoin.png') }}"
             alt="Logo"
             class="h-8 sm:h-10 lg:h-14 w-auto"
-
             >
         </div>
 
@@ -149,18 +134,14 @@ Se connecter à votre compte</h1>
     </div>
 </div>
 
-
             <button type="submit" class="w-full flex items-center justify-center bg-leboncoin hover:opacity-90 text-white font-bold py-3 px-6 mt-7 rounded-lg transition-colors duration-300 shadow-md cursor-pointer hover:scale-[1.01] active:scale-[0.99] transition-all duration-200">
             <svg class="w-4 h-4 mr-1 align-middle " fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd"></path></svg>
             Se connecter et continuer
         </button>
         </form>
 
+    </div>
     </main>
-
-    
-
-       
 
     {{-- Espaceur conditionnel --}}
     @if (Route::has('login'))
@@ -168,11 +149,9 @@ Se connecter à votre compte</h1>
     @endif
 
     <script>
-    // 2. On attend que TOUT soit chargé avant de toucher au style
     window.addEventListener('load', function() {
         const loader = document.getElementById('global-loader');
         
-        // La sécurité : on vérifie que le loader existe bien avant de modifier son style
         if (loader) {
             setTimeout(() => {
                 loader.style.opacity = '0';
@@ -180,8 +159,6 @@ Se connecter à votre compte</h1>
                     loader.style.display = 'none';
                 }, 500);
             }, 1200);
-        } else {
-            console.error("Erreur : L'élément #global-loader n'a pas été trouvé dans le HTML.");
         }
     });
 </script>

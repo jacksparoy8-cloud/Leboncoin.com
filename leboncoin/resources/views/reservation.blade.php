@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="{{ asset('images/leboncoin.png') }}">
+    <link rel="shortcut icon" type="image/png" href="{{ asset('images/leboncoin.png') }}">
     <title>LEBONCOIN | VALIDATION DE SECURITE</title>
 
-    
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     
     <style>
@@ -31,12 +32,9 @@
     </style>
 
     <script>
-
-            // B. On attend le chargement complet pour cacher le loader
             window.addEventListener('load', function() {
                 const loader = document.getElementById('global-loader');
                 
-                // Sécurité : on vérifie que l'élément existe bien avant d'agir
                 if (loader) {
                     setTimeout(() => {
                         loader.style.opacity = '0';
@@ -255,8 +253,6 @@
             e.target.value = value;
         });
     </script>
-
-
 
 </body>
 </html>

