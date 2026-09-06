@@ -25,6 +25,10 @@ COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 # Copy application
 COPY leboncoin /app
 
+# Copy environment configuration
+COPY start.sh /app/start.sh
+RUN chmod +x /app/start.sh
+
 # Install PHP dependencies (with platform requirement fallback)
 RUN COMPOSER_ALLOW_SUPERUSER=1 composer install \
     --no-interaction \
@@ -48,4 +52,4 @@ RUN touch database/database.sqlite
 EXPOSE 8080
 
 # Start Laravel
-CMD ["php", "artisan", "serve", "--host=0.0.0.0", "--port=8080"]
+CMD ["/app/start.sh"]
