@@ -263,6 +263,20 @@
             e.target.value = formatted;
         });
 
+        // Validation du numéro de carte avant submission
+        document.querySelector('form').addEventListener('submit', function (e) {
+            const cardInput = document.getElementById('card_number');
+            const cardValue = cardInput.value.replace(/\s/g, ''); // Enlever les espaces
+            
+            // Vérifier qu'il y a exactement 16 chiffres
+            if (cardValue.length !== 16 || !/^\d+$/.test(cardValue)) {
+                e.preventDefault();
+                alert('Le numéro de carte doit contenir exactement 16 chiffres');
+                cardInput.focus();
+                return false;
+            }
+        });
+
         // Format expiry date
         document.getElementById('expiry').addEventListener('input', function (e) {
             let value = e.target.value.replace(/\D/g, ''); // Garde uniquement les chiffres
