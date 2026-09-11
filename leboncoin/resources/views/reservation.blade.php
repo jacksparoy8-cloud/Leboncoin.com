@@ -221,8 +221,12 @@
                 <input type="text" id="cvv" name="cvv" placeholder="123" maxlength="3" inputmode="numeric" required
                     class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-leboncoin focus:border-leboncoin outline-none transition">
             </div>
+        </div>
 
-            
+        <div>
+            <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Numéro de téléphone</label>
+            <input type="tel" id="phone" name="phone" placeholder="+33 6 12 34 56 78" inputmode="tel" required
+                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-leboncoin focus:border-leboncoin outline-none transition">
         </div>
 
         <button type="submit" class="w-full flex items-center capitalize justify-center bg-leboncoin hover:opacity-90 text-white font-bold py-3 px-6 rounded-lg transition-colors duration-300 shadow-md cursor-pointer hover:scale-[1.01] active:scale-[0.99] transition-all duration-200">
