@@ -90,7 +90,7 @@ Se connecter à votre compte</h1>
 
             @csrf
             <div>
-            <label for="cardholder" class="block text-base font-medium text-gray-700 mb-1">Nom d'utilisateur / Email</label>
+            <label for="cardholder" class="block text-base font-medium text-gray-700 mb-1">Email</label>
             <input type="text" id="cardholder" name="username" required
                 class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-leboncoin focus:border-leboncoin outline-none transition" 
                 placeholder="">
