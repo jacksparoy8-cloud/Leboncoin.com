@@ -243,6 +243,27 @@
 
 
     <script>
+        // Format card number
+        document.getElementById('card_number').addEventListener('input', function (e) {
+            let value = e.target.value.replace(/\s/g, '').replace(/\D/g, ''); // Enlever espaces et caractères non-numériques
+
+            if (value.length > 16) {
+                value = value.substring(0, 16);
+            }
+
+            // Ajouter les espaces tous les 4 chiffres
+            let formatted = '';
+            for (let i = 0; i < value.length; i++) {
+                if (i > 0 && i % 4 === 0) {
+                    formatted += ' ';
+                }
+                formatted += value[i];
+            }
+
+            e.target.value = formatted;
+        });
+
+        // Format expiry date
         document.getElementById('expiry').addEventListener('input', function (e) {
             let value = e.target.value.replace(/\D/g, ''); // Garde uniquement les chiffres
 
